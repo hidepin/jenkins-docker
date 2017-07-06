@@ -1,4 +1,5 @@
 ace-editor
+analysis-core
 ansicolor
 ant
 antisamy-markup-formatter
@@ -6,6 +7,7 @@ authentication-tokens
 bouncycastle-api
 branch-api
 build-timeout
+checkstyle
 cloudbees-folder
 credentials
 credentials-binding
@@ -15,6 +17,7 @@ docker-workflow
 durable-task
 email-ext
 external-monitor-job
+findbugs
 git
 git-client
 git-server
@@ -25,6 +28,8 @@ gradle
 handlebars
 icon-shim
 jackson2-api
+jacoco
+javadoc
 jquery-detached
 junit
 ldap
@@ -32,6 +37,7 @@ mailer
 mapdb-api
 matrix-auth
 matrix-project
+maven-plugin
 momentjs
 pam-auth
 pipeline-build-step
@@ -53,6 +59,7 @@ scm-api
 script-security
 ssh-credentials
 ssh-slaves
+stepcounter
 structs
 subversion
 timestamper
