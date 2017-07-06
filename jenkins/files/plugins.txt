@@ -49,6 +49,7 @@ icon-shim
 jackson2-api
 jacoco
 javadoc
+jobConfigHistory
 jquery-detached
 junit
 ldap
