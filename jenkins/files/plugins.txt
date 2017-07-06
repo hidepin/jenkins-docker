@@ -77,6 +77,7 @@ pipeline-stage-tags-metadata
 pipeline-stage-view
 plain-credentials
 pubsub-light
+redmine
 resource-disposer
 scm-api
 script-security
