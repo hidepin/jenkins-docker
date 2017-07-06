@@ -79,6 +79,7 @@ resource-disposer
 scm-api
 script-security
 sse-gateway
+ssh-agent
 ssh-credentials
 ssh-slaves
 stepcounter
