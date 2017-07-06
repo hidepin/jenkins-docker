@@ -56,6 +56,7 @@ mailer
 mapdb-api
 matrix-auth
 matrix-project
+mattermost
 maven-plugin
 metrics
 momentjs
