@@ -3,7 +3,7 @@ version: '2'
 services:
 
   app:
-    image: jenkins:alpine
+    build: jenkins
     ports:
       - 8080:8080
       - 50000:50000
