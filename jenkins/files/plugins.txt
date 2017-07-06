@@ -1,4 +1,5 @@
 ace-editor
+ansicolor
 ant
 antisamy-markup-formatter
 authentication-tokens
