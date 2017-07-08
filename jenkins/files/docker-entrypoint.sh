@@ -13,4 +13,4 @@ echo ${JENKINS_HOME}/.ssh/id_rsa.pub
 cat ${JENKINS_HOME}/.ssh/id_rsa.pub
 echo "*************************************************************"
 
-/usr/local/bin/jenkins.sh
+exec /usr/local/bin/jenkins.sh
