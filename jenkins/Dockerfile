@@ -4,6 +4,7 @@ LABEL maintainer "Hidetoshi Imai <hidepin@gmail.com>"
 
 RUN yum clean all && \
     yum install -y \
+                unzip \
                 git \
                 wget \
                 curl \
