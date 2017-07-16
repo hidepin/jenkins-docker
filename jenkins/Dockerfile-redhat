@@ -1,4 +1,4 @@
-FROM centos:centos7
+FROM registry.access.redhat.com/rhel7/rhel
 
 LABEL maintainer "Hidetoshi Imai <hidepin@gmail.com>"
 
