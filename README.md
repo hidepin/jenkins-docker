@@ -10,6 +10,41 @@ jenkins-docker
     docker-compose build
     ```
 
+OSの変更方法
+============================================================
+
+RHEL7
+------------------------------------------------------------
+
+1. docker-compose.override.ymlを作成する
+
+    ```
+    version: '2'
+
+    services:
+
+      app:
+        build:
+          context: ./jenkins
+          dockerfile: Dockerfile-redhat
+    ```
+
+CentOS7
+------------------------------------------------------------
+
+1. docker-compose.override.ymlを作成する
+
+    ```
+    version: '2'
+
+    services:
+
+      app:
+        build:
+          context: ./jenkins
+          dockerfile: Dockerfile-centos
+    ```
+
 systemdによる自動起動設定
 ============================================================
 host OSにsystemdの自動起動設定を行う
