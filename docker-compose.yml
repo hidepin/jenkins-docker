@@ -10,3 +10,5 @@ services:
     volumes:
       - /opt/docker/jenkins/volumes/app/var/jenkins_home:/var/jenkins_home
       - /etc/localtime:/etc/localtime:ro
+    environment:
+      - JAVA_OPTS=-Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8
