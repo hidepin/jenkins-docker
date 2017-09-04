@@ -10,6 +10,13 @@ jenkins-docker
     docker-compose build
     ```
 
+2. dirを作成する
+
+    ```
+    mkdir -p /opt/docker/jenkins/volumes/app/var/jenkins_home
+    chown 1000:1000 /opt/docker/jenkins/volumes/app/var/jenkins_home
+    ```
+
 OSの変更方法
 ============================================================
 
