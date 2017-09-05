@@ -37,6 +37,9 @@ RHEL7
         args: <- Proxy環境の場合
           http_proxy: http://xxx.xxx.xxx.xxx:3128 <- Proxy環境の場合
           https_proxy: http://xxx.xxx.xxx.xxx:3128 <- Proxy環境の場合
+        environment: <- Proxy環境の場合
+          http_proxy: http://xxx.xxx.xxx.xxx:3128 <- Proxy環境の場合
+          https_proxy: http://xxx.xxx.xxx.xxx:3128 <- Proxy環境の場合
     ```
 
 CentOS7
@@ -54,6 +57,9 @@ CentOS7
           context: ./jenkins
           dockerfile: Dockerfile-centos
         args: <- Proxy環境の場合
+          http_proxy: http://xxx.xxx.xxx.xxx:3128 <- Proxy環境の場合
+          https_proxy: http://xxx.xxx.xxx.xxx:3128 <- Proxy環境の場合
+        environment: <- Proxy環境の場合
           http_proxy: http://xxx.xxx.xxx.xxx:3128 <- Proxy環境の場合
           https_proxy: http://xxx.xxx.xxx.xxx:3128 <- Proxy環境の場合
     ```
