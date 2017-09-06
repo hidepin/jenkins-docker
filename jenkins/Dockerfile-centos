@@ -2,13 +2,15 @@ FROM centos:centos7
 
 LABEL maintainer "Hidetoshi Imai <hidepin@gmail.com>"
 
+ARG openjdk_devel
+
 RUN yum clean all && \
     yum install -y \
                 unzip \
                 git \
                 wget \
                 curl \
-                java-1.8.0-openjdk-devel && \
+                ${openjdk_devel:-java-1.8.0-openjdk-devel} && \
     yum clean all
 
 RUN localedef -i ja_JP -f UTF-8 ja_JP.utf8
