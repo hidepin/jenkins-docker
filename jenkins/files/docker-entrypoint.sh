@@ -2,6 +2,28 @@
 
 set -e
 
+output_proxy_setting() {
+    if [ x${1} != x"" -a x${2} != x"" -a x${3} != x"" ]; then
+        cat <<EOF >> ${JENKINS_HOME}/.m2/settings.xml
+   <proxy>
+      <id>${1}</id>
+      <active>true</active>
+      <protocol>${1}</protocol>
+      <host>${2}</host>
+      <port>${3}</port>
+EOF
+        if [ x${no_proxy} != x"" ]; then
+            non_proxy_hosts=`echo ${no_proxy} | sed 's/,/|/'`
+            cat <<EOF >> ${JENKINS_HOME}/.m2/settings.xml
+      <nonProxyHosts>${non_proxy_hosts}</nonProxyHosts>
+EOF
+        fi
+        cat <<EOF >> ${JENKINS_HOME}/.m2/settings.xml
+    </proxy>
+EOF
+    fi
+}
+
 if [ ! -f "${JENKINS_HOME}/.ssh/id_rsa.pub" ]; then
     echo "generate ssh key file."
     mkdir -p ${JENKINS_HOME}/.ssh
@@ -26,28 +48,12 @@ EOF
     if [ x${http_proxy} != x"" ]; then
         proxy_host=`echo ${http_proxy}|sed 's#http://##' | sed 's/:.*//'`
         proxy_port=`echo ${http_proxy}|sed 's#.*:##'`
-        cat <<EOF >> ${JENKINS_HOME}/.m2/settings.xml
-   <proxy>
-      <id>http</id>
-      <active>true</active>
-      <protocol>http</protocol>
-      <host>${proxy_host}</host>
-      <port>${proxy_port}</port>
-    </proxy>
-EOF
+        output_proxy_setting http ${proxy_host} ${proxy_port}
     fi
     if [ x${https_proxy} != x"" ]; then
         proxy_host=`echo ${https_proxy}|sed 's#http://##' | sed 's/:.*//'`
         proxy_port=`echo ${https_proxy}|sed 's#.*:##'`
-        cat <<EOF >> ${JENKINS_HOME}/.m2/settings.xml
-   <proxy>
-      <id>https</id>
-      <active>true</active>
-      <protocol>https</protocol>
-      <host>${proxy_host}</host>
-      <port>${proxy_port}</port>
-    </proxy>
-EOF
+        output_proxy_setting http ${proxy_host} ${proxy_port}
     fi
     cat <<EOF >> ${JENKINS_HOME}/.m2/settings.xml
   </proxies>
