@@ -8,6 +8,7 @@ RUN yum clean all && \
     yum install -y \
                 unzip \
                 git \
+                subversion \
                 wget \
                 curl \
                 ${openjdk_devel:-java-1.8.0-openjdk-devel} && \
